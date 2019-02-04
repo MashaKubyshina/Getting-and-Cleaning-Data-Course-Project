@@ -1,6 +1,6 @@
 The purpose of this project is to create tidy data set 
 
-Here are the data for the project:
+Here is the data for the project:
 
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
@@ -15,17 +15,10 @@ for each activity and each subject.
 
 Steps
 1. Download and unzip file
-2. Look at the data in the files
-##Activity labels
-
-##1 WALKING
-##2 WALKING_UPSTAIRS
-##3 WALKING_DOWNSTAIRS
-##4 SITTING
-##5 STANDING
-##6 LAYING
+2. Look at the data in all the files
 
 The R code in run_analysis.R does the following:
+
 1. Unzip Project Data to /data directory and check the file
 2. check files in UCI HAR Dataset folder
 3. check files in each "test" and "train" folders
@@ -56,16 +49,16 @@ head(activityLabelsData)
 12. we give descriptive activity names to name the activities in the data set
 13. use grepl to identify necessary names (returns TRUE/FALSE vector)
 14. extract only the measurements on the mean and standard deviation for each measurement
-15. ## create second dataset using aggregate, then order it
-## remember to use FinalDataNames, not the FinaldataMS
+15. create second dataset using aggregate, then order it
+  (remember to use FinalDataNames, not the FinaldataMS)
 16. View results
 17. write it as a txt file
 
-Main component of worm is keep checking eveyr new data frame using View() function to undertand the data we are workign with
+Main component of work is keep checking eveyry new data set using View() function to undertand the data we are workign with
 
 Variables used:
 trainDataSubject, trainX, trainY, activityLabelsData, featuresData, mergedTest, mergedTrain, FinalData, FinalDataNames,
 meanstd, FinalDataMS, SecondDataSet
 
-Functions used:
+Functions/elements used:
 grepl, merge, cbind, rbind, aggregate, 
