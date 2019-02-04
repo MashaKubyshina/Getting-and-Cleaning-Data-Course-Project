@@ -1,0 +1,71 @@
+The purpose of this project is to create tidy data set 
+
+Here are the data for the project:
+
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+This was the goal of the project:
+
+Merges the training and the test sets to create one data set.
+Extracts only the measurements on the mean and standard deviation for each measurement.
+Uses descriptive activity names to name the activities in the data set
+Appropriately labels the data set with descriptive variable names.
+From the data set in step 4, creates a second, independent tidy data set with the average of each variable 
+for each activity and each subject.
+
+Steps
+1. Download and unzip file
+2. Look at the data in the files
+##Activity labels
+
+##1 WALKING
+##2 WALKING_UPSTAIRS
+##3 WALKING_DOWNSTAIRS
+##4 SITTING
+##5 STANDING
+##6 LAYING
+
+The R code in run_analysis.R does the following:
+1. Unzip Project Data to /data directory and check the file
+2. check files in UCI HAR Dataset folder
+3. check files in each "test" and "train" folders
+4. create data frames for each set of data
+5. read activity labels and features
+6. View the data set, read the names
+7. head(featuresData)
+##V1                V2
+##1  1 tBodyAcc-mean()-X
+##2  2 tBodyAcc-mean()-Y
+##3  3 tBodyAcc-mean()-Z
+##4  4  tBodyAcc-std()-X
+##5  5  tBodyAcc-std()-Y
+##6  6  tBodyAcc-std()-Z
+
+head(activityLabelsData)
+##V1                 V2
+##1  1            WALKING
+##2  2   WALKING_UPSTAIRS
+##3  3 WALKING_DOWNSTAIRS
+##4  4            SITTING
+##5  5           STANDING
+##6  6             LAYING
+8. assign activity names
+9. assign names to test set
+10. assign names to train set
+11. merging data in one data set and view merged data
+12. we give descriptive activity names to name the activities in the data set
+13. use grepl to identify necessary names (returns TRUE/FALSE vector)
+14. extract only the measurements on the mean and standard deviation for each measurement
+15. ## create second dataset using aggregate, then order it
+## remember to use FinalDataNames, not the FinaldataMS
+16. View results
+17. write it as a txt file
+
+Main component of worm is keep checking eveyr new data frame using View() function to undertand the data we are workign with
+
+Variables used:
+trainDataSubject, trainX, trainY, activityLabelsData, featuresData, mergedTest, mergedTrain, FinalData, FinalDataNames,
+meanstd, FinalDataMS, SecondDataSet
+
+Functions used:
+grepl, merge, cbind, rbind, aggregate, 
